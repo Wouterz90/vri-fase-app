@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dragbar Demo</title>
+</head>
+<body>
+  <h1>Dragbaar Balkje</h1>
+  <button onclick="send()">Verzend Data</button>
+
+  <script>
+    function send() {
+      fetch('/api/update-bar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: '001', start: 30, end: 50 })
+      })
+      .then(res => res.json())
+      .then(data => alert('Server zegt: ' + data.status));
+    }
+  </script>
+</body>
+</html>
