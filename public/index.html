@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dragbar Demo</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Dragbar Demo</title>
 </head>
 <body>
-  <h1>Dragbaar Balkje</h1>
-  <button onclick="send()">Verzend Data</button>
+    <script src="/js/main.js"></script>
+    <h1>Dragbaar Balkje</h1>
+    <button onclick="send()">Verzend Data</button>
+
+    <table>
+    <thead>
+        <tr>
+        <th>Sg</th>
+        <th>Rea.</th>
+        <th>Start</th>
+        <th>End</th>
+        <th style="width: 60%;">Tijdlijn (0–100)</th>
+        <th>Verz.</th>
+        <th>Verl.</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr data-id="001">
+        <td>001</td>
+        <td>1</td>
+        <td><input type="number" min="0" max="100" value="30" class="start"></td>
+        <td><input type="number" min="0" max="100" value="50" class="end"></td>
+        <td>
+            <div class="timeline">
+            <div class="bar green">
+                <div class="handle left"></div>
+                <div class="handle right"></div>
+            </div>
+            <div class="bar yellow"></div>
+            </div>
+        </td>
+        <td>42.7</td>
+        <td>35.6</td>
+        </tr>
+
+    </tbody>
+    </table>
 
   <script>
     function send() {
