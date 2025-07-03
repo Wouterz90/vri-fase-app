@@ -62,7 +62,17 @@ th {
     right: 0;
 }
 
-.gap-line {
+.gap-line{
+  position: absolute;
+  top: 0%;
+  bottom: 0;
+  width: 1px;
+  background-color: red;
+  z-index: 0;
+  height: 80%;
+}
+
+.gap-line.free{
   position: absolute;
   top: 40%;
   bottom: 0;
@@ -70,6 +80,7 @@ th {
   background-color: red;
   z-index: 0;
   height: 20%;
+  opacity: 50;
 }
 
 input[type="number"] {

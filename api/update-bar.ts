@@ -9,3 +9,4 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     res.status(405).send('Method Not Allowed');
   }
 }
+

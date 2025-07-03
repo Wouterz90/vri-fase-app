@@ -33,7 +33,6 @@ function send() {
 
     // update rode lijnen
     const leftGap = row.querySelector('.left-gap');
-    const middleGap = row.querySelector('.middle-gap');
     const rightGap = row.querySelector('.right-gap');
 
     // segment 1: van 0% tot start
