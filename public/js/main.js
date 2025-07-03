@@ -28,6 +28,23 @@ const timelineWidth = 100; // Percent
 
     yellow.style.left = `${end}%`;
     yellow.style.width = `2%`;
+
+    // update rode lijnen
+    const leftGap = row.querySelector('.left-gap');
+    const middleGap = row.querySelector('.middle-gap');
+    const rightGap = row.querySelector('.right-gap');
+
+    // segment 1: van 0% tot start
+    leftGap.style.left = `0%`;
+    leftGap.style.width = `${start}%`;
+
+    // segment 2: tussen end en end+2 (begin van geel) tot geel einde
+    middleGap.style.left = `${start + (end - start)}%`;
+    middleGap.style.width = `2%`; // of eventueel 0 als geel te smal is
+
+    // segment 3: vanaf geel einde tot 100%
+    rightGap.style.left = `${end + 2}%`;
+    rightGap.style.width = `${100 - (end + 2)}%`;
   }
 
 function enableDragging(row) {
