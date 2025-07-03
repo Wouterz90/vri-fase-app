@@ -64,13 +64,12 @@ th {
 
 .gap-line {
   position: absolute;
-  top: 0;
+  top: 40%;
   bottom: 0;
   width: 1px;
   background-color: red;
   z-index: 0;
-  height: 4px;
-  vertical-align: middle;
+  height: 20%;
 }
 
 input[type="number"] {
