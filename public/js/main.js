@@ -1,3 +1,5 @@
+console.log("Script geladen");
+
 function send() {
       fetch('/api/update-bar', {
         method: 'POST',
