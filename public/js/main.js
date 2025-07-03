@@ -10,7 +10,9 @@ function send() {
       .then(data => alert('Server zegt: ' + data.status));
     }
 
-const timelineWidth = 100; // Percent
+    const timelineWidth = 100; // Percent
+
+    let yellowTime = 3;
 
   function updateBars(row) {
     const startInput = row.querySelector('.start');
@@ -27,7 +29,7 @@ const timelineWidth = 100; // Percent
     green.style.width = `${greenWidth}%`;
 
     yellow.style.left = `${end}%`;
-    yellow.style.width = `2%`;
+    yellow.style.width = `${yellowTime}%`;
 
     // update rode lijnen
     const leftGap = row.querySelector('.left-gap');
@@ -38,13 +40,10 @@ const timelineWidth = 100; // Percent
     leftGap.style.left = `0%`;
     leftGap.style.width = `${start}%`;
 
-    // segment 2: tussen end en end+2 (begin van geel) tot geel einde
-    middleGap.style.left = `${start + (end - start)}%`;
-    middleGap.style.width = `2%`; // of eventueel 0 als geel te smal is
 
     // segment 3: vanaf geel einde tot 100%
-    rightGap.style.left = `${end + 2}%`;
-    rightGap.style.width = `${100 - (end + 2)}%`;
+    rightGap.style.left = `${end + yellowTime}%`;
+    rightGap.style.width = `${100 - (end + yellowTime)}%`;
   }
 
 function enableDragging(row) {
