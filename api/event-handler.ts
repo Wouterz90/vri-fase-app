@@ -12,7 +12,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
   }
 
   if (request.method === 'POST') {
-    // ... (rest van je code)
+    console.warn(request)
   } else {
     response.status(405).json({ message: 'Methode niet toegestaan' });
   }
