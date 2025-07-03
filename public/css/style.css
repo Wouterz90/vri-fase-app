@@ -69,6 +69,7 @@ th {
   width: 1px;
   background-color: red;
   z-index: 0;
+  height: 4px;
 }
 
 input[type="number"] {
