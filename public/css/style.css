@@ -1,61 +1,67 @@
 body {
-      font-family: sans-serif;
-    }
+    font-family: sans-serif;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 2rem auto;
-    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem auto;
+}
 
-    th, td {
-      padding: 4px 6px;
-      font-size: 12px;
-      border-bottom: 1px solid #eee;
-    }
+th,
+td {
+    padding: 4px 6px;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+}
 
-    th {
-      background: #f2f2f2;
-    }
+th {
+    background: #f2f2f2;
+}
 
-    .timeline {
-      position: relative;
-      height: 16px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 2px;
-      width: 100%;
-    }
+.timeline {
+    position: relative;
+    height: 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 100%;
+}
 
-    .bar {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      border-radius: 2px;
-      box-sizing: border-box;
-    }
+.bar {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
 
-    .bar.green {
-      background-color: #006400;
-      cursor: grab;
-    }
+.bar.green {
+    background-color: #006400;
+    cursor: grab;
+}
 
-    .bar.yellow {
-      background-color: #FFD700;
-    }
+.bar.yellow {
+    background-color: #FFD700;
+}
 
-    .handle {
-      position: absolute;
-      width: 2px;
-      height: 100%;
-      top: 0;
-      cursor: ew-resize;
-      background-color: rgba(255, 255, 255, 0.5);
-    }
+.handle {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    cursor: ew-resize;
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
-    .handle.left { left: 0; }
-    .handle.right { right: 0; }
+.handle.left {
+    left: 0;
+}
 
-    input[type="number"] {
-      width: 60px;
-    }
+.handle.right {
+    right: 0;
+}
+
+input[type="number"] {
+    width: 60px;
+}
