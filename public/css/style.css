@@ -69,12 +69,12 @@ th {
   width: 1px;
   background-color: red;
   z-index: 0;
-  height: 20%;
-  margin-top: 40%;
+  height: 80%;
 }
 
 .gap-line.free{
   position: absolute;
+  top: 40%;
   bottom: 0;
   width: 1px;
   background-color: red;
