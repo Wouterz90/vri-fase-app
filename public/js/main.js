@@ -102,8 +102,5 @@ function enableDragging(row) {
   green.addEventListener('mousedown', onMouseDown);
 }
 
-// input listeners
-row.querySelectorAll('.start, .end').forEach(input => {
-  input.addEventListener('input', () => updateBars(row));
-});
+
 
