@@ -1,49 +1,49 @@
 console.log("Script geladen");
 
 function send() {
-      fetch('/api/update-bar', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: '001', start: 30, end: 50 })
-      })
-      .then(res => res.json())
-      .then(data => alert('Server zegt: ' + data.status));
-    }
+  fetch('/api/update-bar', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: '001', start: 30, end: 50 })
+  })
+    .then(res => res.json())
+    .then(data => alert('Server zegt: ' + data.status));
+}
 
-    const timelineWidth = 100; // Percent
+const timelineWidth = 100; // Percent
 
-    let yellowTime = 3;
+let yellowTime = 3;
 
-  function updateBars(row) {
-    const startInput = row.querySelector('.start');
-    const endInput = row.querySelector('.end');
-    const green = row.querySelector('.bar.green');
-    const yellow = row.querySelector('.bar.yellow');
+function updateBars(row) {
+  const startInput = row.querySelector('.start');
+  const endInput = row.querySelector('.end');
+  const green = row.querySelector('.bar.green');
+  const yellow = row.querySelector('.bar.yellow');
 
-    let start = parseFloat(startInput.value);
-    let end = parseFloat(endInput.value);
-    if (end < start) [start, end] = [end, start];
+  let start = parseFloat(startInput.value);
+  let end = parseFloat(endInput.value);
+  if (end < start) [start, end] = [end, start];
 
-    const greenWidth = end - start;
-    green.style.left = `${start}%`;
-    green.style.width = `${greenWidth}%`;
+  const greenWidth = end - start;
+  green.style.left = `${start}%`;
+  green.style.width = `${greenWidth}%`;
 
-    yellow.style.left = `${end}%`;
-    yellow.style.width = `${yellowTime}%`;
+  yellow.style.left = `${end}%`;
+  yellow.style.width = `${yellowTime}%`;
 
-    // update rode lijnen
-    const leftGap = row.querySelector('.left-gap');
-    const rightGap = row.querySelector('.right-gap');
+  // update rode lijnen
+  const leftGap = row.querySelector('.left-gap');
+  const rightGap = row.querySelector('.right-gap');
 
-    // segment 1: van 0% tot start
-    leftGap.style.left = `0%`;
-    leftGap.style.width = `${start}%`;
+  // segment 1: van 0% tot start
+  leftGap.style.left = `0%`;
+  leftGap.style.width = `${start}%`;
 
 
-    // segment 3: vanaf geel einde tot 100%
-    rightGap.style.left = `${end + yellowTime}%`;
-    rightGap.style.width = `${100 - (end + yellowTime)}%`;
-  }
+  // segment 3: vanaf geel einde tot 100%
+  rightGap.style.left = `${end + yellowTime}%`;
+  rightGap.style.width = `${100 - (end + yellowTime)}%`;
+}
 
 function enableDragging(row) {
   const green = row.querySelector('.bar.green');
@@ -102,13 +102,8 @@ function enableDragging(row) {
   green.addEventListener('mousedown', onMouseDown);
 }
 
-document.querySelectorAll('tr[data-id]').forEach(row => {
-  // init
-  updateBars(row);
-  enableDragging(row);
-
-  // input listeners
-  row.querySelectorAll('.start, .end').forEach(input => {
-    input.addEventListener('input', () => updateBars(row));
-  });
+// input listeners
+row.querySelectorAll('.start, .end').forEach(input => {
+  input.addEventListener('input', () => updateBars(row));
 });
+
