@@ -69,7 +69,8 @@ th {
   width: 1px;
   background-color: red;
   z-index: 0;
-  height: 80%;
+  height: 20%;
+  margin-top: 40%;
 }
 
 .gap-line.free{

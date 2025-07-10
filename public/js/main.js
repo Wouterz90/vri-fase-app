@@ -1,6 +1,4 @@
 console.log("Script geladen");
-const VERCEL_API_URL = 'https://vri-fase-app.vercel.app/api/event-handler';
-
 
 function send() {
       fetch('/api/update-bar', {
@@ -16,7 +14,7 @@ function send() {
 
     let yellowTime = 3;
 
-  async function updateBars(row) {
+  function updateBars(row) {
     const startInput = row.querySelector('.start');
     const endInput = row.querySelector('.end');
     const green = row.querySelector('.bar.green');
@@ -45,41 +43,6 @@ function send() {
     // segment 3: vanaf geel einde tot 100%
     rightGap.style.left = `${end + yellowTime}%`;
     rightGap.style.width = `${100 - (end + yellowTime)}%`;
-
-    const eventData = {
-        eventName: 'update_bar',
-        userId: 'user123',
-        start: start,
-        end:end,
-        // Voeg hier andere relevante data toe
-        details: {
-            
-        }
-    };
-
-    try {
-        const response = await fetch(VERCEL_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(eventData) // Stuur de data als JSON-string
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            responseMessage.textContent = `Succes: ${data.message}`;
-            responseMessage.style.color = 'green';
-        } else {
-            responseMessage.textContent = `Fout: ${data.message || 'Onbekende fout'}`;
-            responseMessage.style.color = 'red';
-        }
-    } catch (error) {
-        responseMessage.textContent = `Netwerkfout: ${error.message}`;
-        responseMessage.style.color = 'red';
-        console.error('Fout bij versturen evenement:', error);
-    }
   }
 
 function enableDragging(row) {
