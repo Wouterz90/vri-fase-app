@@ -75,7 +75,6 @@ th {
 
 .gap-line.free{
   position: absolute;
-  top: 40%;
   bottom: 0;
   width: 1px;
   background-color: red;
